@@ -74,7 +74,8 @@ class VogelMethod {
 				curDemand ++;
 				continue;
 			}
-			if(supplyBalance[supplyIndexes[curSupply]] >= demandBalance[demandIndexes[curDemand]]){
+			
+			if(curSupply < s && (curDemand > d-1 || supplyBalance[supplyIndexes[curSupply]] >= demandBalance[demandIndexes[curDemand]]) ){
 				i = supplyIndexes[curSupply];
 				j = TwoDimensionArrayUtil.rowMin(sdCost, i, residueDemandSet);
 				curSupply ++;
